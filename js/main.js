@@ -18,7 +18,7 @@ $(document).ready(function() {
     refreshLiveContent();
 
     //文字顏色選擇器
-    $('#colorSelector').ColorPicker({
+    $('#textColorSelector').ColorPicker({
         color: '#ffffff',
         onShow: function (colpkr) {
             $(colpkr).fadeIn(500);
@@ -29,7 +29,27 @@ $(document).ready(function() {
             return false;
         },
         onChange: function (hsb, hex, rgb) {
-            $('#colorSelector div').css('backgroundColor', '#' + hex);
+            $('#textColorSelector div').css('backgroundColor', '#' + hex);
+            $(".reaction-title").each(function() {
+                $(this).css({
+                    color: '#'+hex
+                })
+            });
+        }
+    });
+    //讚數顏色選擇器
+    $('#numberColorSelector').ColorPicker({
+        color: '#ffffff',
+        onShow: function (colpkr) {
+            $(colpkr).fadeIn(500);
+            return false;
+        },
+        onHide: function (colpkr) {
+            $(colpkr).fadeOut(500);
+            return false;
+        },
+        onChange: function (hsb, hex, rgb) {
+            $('#numberColorSelector div').css('backgroundColor', '#' + hex);
             $(".reaction-number").each(function() {
                 $(this).css({
                     color: '#'+hex
@@ -117,8 +137,15 @@ function refreshLiveContent() {
         "background-image": "url("+$("#backgroundImage").val()+")"
     });
 
-    //每個圖示的背景圖片，塞入
+    //每個圖示的文＋圖
     $(".reaction-value-input").each(function() {
-        $(".reaction-image[value="+$(this).attr("data-value")+"] img").attr("src", $(this).val());
+        if($(this).attr("data-type") == "text") {
+            //文字類
+            $(".reaction-title[value="+$(this).attr("data-value")+"]").html($(this).val());
+        }
+        else if ($(this).attr("data-type") == "image"){
+            //圖片類
+            $(".reaction-image[value="+$(this).attr("data-value")+"] img").attr("src", $(this).val());
+        }
     });
 }

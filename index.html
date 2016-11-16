@@ -86,45 +86,43 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">按讚背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="like" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">按讚文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="like" value="魯Like"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="like" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">愛心背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="love" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">愛心文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="love" value="魯Love"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="love" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">驚訝背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="wow" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">驚訝文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="wow" value="魯WOW"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="wow" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">大笑背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="haha" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">大笑文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="haha" value="魯haha"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="haha" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">哭臉背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="sad" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">哭臉文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="sad" value="魯sad"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="sad" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">生氣背景圖</label>
-                            <div class="col-md-7">
-                                <input type="text" class="form-control reaction-value-input" data-value="angry" value="http://i.imgur.com/QkhNtvO.jpg">
-                            </div>
+                            <label class="col-md-2 control-label">生氣文＋圖</label>
+                            <div class="col-md-2"><input type="text" class="form-control reaction-value-input" data-type="text" data-value="sad" value="魯angry"></div>
+                            <div class="col-md-5"><input type="text" class="form-control reaction-value-input" data-type="image" data-value="angry" value="http://i.imgur.com/QkhNtvO.jpg"></div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">文字顏色</label>
-                            <div class="col-md-7">
-                                <div class ="color-selector" id="colorSelector"><div style="background-color: #ffffff"></div></div>
+                            <div class="col-md-1">
+                                <div class ="color-selector" id="textColorSelector"><div style="background-color: #ffffff"></div></div>
+                            </div>
+                            <label class="col-md-2 control-label">讚數顏色</label>
+                            <div class="col-md-1">
+                                <div class ="color-selector" id="numberColorSelector"><div style="background-color: #ffffff"></div></div>
                             </div>
                         </div>
                     </form>
@@ -142,6 +140,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                            <div class = "reaction-title" value="like"></div>
                                             <img class="reaction-icon" src="images/like.png"><div class="reaction-number" data-value="LIKE">0</div>
                                         </div>
                                     </td>
@@ -150,6 +149,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                            <div class = "reaction-title" value="love"></div>
                                             <img class="reaction-icon" src="images/love.png"><div class="reaction-number" data-value="LOVE">0</div>
                                         </div>
                                     </td>
@@ -158,6 +158,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                            <div class = "reaction-title" value="wow"></div>
                                             <img class="reaction-icon" src="images/wow.png"><div class="reaction-number" data-value="WOW">0</div>
                                         </div>
                                     </td>
@@ -168,6 +169,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                            <div class = "reaction-title" value="haha"></div>
                                             <img class="reaction-icon" src="images/haha.png"><div class="reaction-number" data-value="HAHA">0</div>
                                         </div>
                                     </td>
@@ -176,6 +178,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                        <div class = "reaction-title" value="sad"></div>
                                             <img class="reaction-icon" src="images/sad.png"><div class="reaction-number" data-value="SAD">0</div>
                                         </div>
                                     </td>
@@ -184,6 +187,7 @@
                                             <img src="">
                                         </div>
                                         <div class = "reaction-info">
+                                            <div class = "reaction-title" value="angry">魯魯魯</div>
                                             <img class="reaction-icon" src="images/angry.png"><div class="reaction-number" data-value="HAHA">0</div>
                                         </div>
                                     </td>

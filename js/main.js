@@ -96,21 +96,27 @@ function stopApplication() {
 }
 function fetchVideoReactions() {
     console.log("fetching facebook live video reactions...");
-    $.getJSON(url, function(response){
-        var datas = response[videoId] || undefined;
-        if(datas) {
-            //輸出各reaction數值
-            for(reaction in datas) {
-                if(reactionFields.indexOf(reaction) != -1) {
-                    $(".reaction-number[data-value="+reaction+"]").html(datas[reaction].summary.total_count);
+    $.ajax({
+        url: url,
+        success: function(response) {
+            var datas = response[videoId] || undefined;
+            if(datas) {
+                //輸出各reaction數值
+                for(reaction in datas) {
+                    if(reactionFields.indexOf(reaction) != -1) {
+                        $(".reaction-number[data-value="+reaction+"]").html(datas[reaction].summary.total_count);
+                    }
                 }
-            }
 
-            //處理total count
-            $("#totalCount").html(datas["totalCount"].summary.total_count);
-        }
-        else {
+                //處理total count
+                $("#totalCount").html(datas["totalCount"].summary.total_count);
+            }
+        },
+        error: function(response) {
             console.log("fetch data faild.");
+            console.log("response:", response);
+            alert("抓取失敗，檢查您的影片id，或者access token是否正確（或者過期）");
+            stopApplication();
         }
     });
 }
